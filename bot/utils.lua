@@ -590,13 +590,13 @@ else
      if not lang then
 					return "_No_ *banned* _users in this group_"
    else
-					return "*هیچ کاربری از این گروه محروم نشده*"
+					return "*هیچ کاربری از این گروه صیک نشده*"
               end
 				end
        if not lang then
    message = '*List of banned users :*\n'
          else
-   message = '_لیست کاربران محروم شده از گروه :_\n'
+   message = '_لیست کاربران صیک شده از گروه :_\n'
      end
   for k,v in pairs(data[tostring(chat_id)]['banned']) do
     message = message ..i.. '- '..v..' [' ..k.. '] \n'
@@ -622,13 +622,13 @@ else
         if not lang then
 					return "_No_ *silent* _users in this group_"
    else
-					return "*لیست کاربران سایلنت شده خالی است*"
+					return "*لیست کاربران خفه شده خالی است*"
              end
 				end
       if not lang then
    message = '*List of silent users :*\n'
        else
-   message = '_لیست کاربران سایلنت شده :_\n'
+   message = '_لیست کاربران خفه شده :_\n'
     end
   for k,v in pairs(data[tostring(chat_id)]['is_silent_users']) do
     message = message ..i.. '- '..v..' [' ..k.. '] \n'
@@ -646,7 +646,7 @@ local lang = redis:get(hash)
   if not lang then
     return '_Group is not added_'
 else
-    return 'گروه به لیست گروه های مدیریتی ربات اضافه نشده است'
+    return '❌گروه به لیست گروه های مدیریتی ربات اضافه نشده است💠'
    end
   end
   if not data[tostring(chat_id)]['whitelist'] then
@@ -713,7 +713,7 @@ local lang = redis:get(hash)
   if not lang then
     return '_Group is not added_'
 else
-    return 'گروه به لیست گروه های مدیریتی ربات اضافه نشده است'
+    return '❎گروه به لیست گروه های مدیریتی ربات اضافه نشده است☑️'
    end
   end
   -- determine if table is empty
@@ -721,7 +721,7 @@ else
       if not lang then
     return "*Filtered words list* _is empty_"
       else
-    return "_لیست کلمات فیلتر شده خالی است_"
+    return "_🔰لیست کلمات فیلتر شده خالی است🔰_"
      end
   end
   if not data[tostring(msg.chat_id_)]['filterlist'] then
@@ -731,7 +731,7 @@ else
       if not lang then
        filterlist = '*List of filtered words :*\n'
          else
-       filterlist = '_لیست کلمات فیلتر شده :_\n'
+       filterlist = '_📋لیست کلمات فیلتر شده📋 :_\n'
     end
  local i = 1
    for k,v in pairs(data[tostring(msg.chat_id_)]['filterlist']) do
